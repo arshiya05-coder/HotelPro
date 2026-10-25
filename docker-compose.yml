@@ -1,0 +1,13 @@
+# Optional: run MongoDB locally with Docker -> `docker compose up -d mongo`
+services:
+  mongo:
+    image: mongo:7
+    container_name: hotelpro-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - hotelpro-data:/data/db
+
+volumes:
+  hotelpro-data:
